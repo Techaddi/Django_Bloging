@@ -215,6 +215,13 @@ a:hover {
   color: #0085A1;
 }
 
+.logo-img{
+    float: left;
+    position: relative;
+    margin: 15px 15px 15px 18px;
+    border-radius: 50%;
+}
+
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;

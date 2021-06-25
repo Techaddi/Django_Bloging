@@ -14,8 +14,13 @@ class Blog(models.Model):
     subtitle = models.CharField(max_length=200)
     postedby= models.CharField(max_length=100)
     date= datetime.datetime.now()
-    img= models.ImageField(upload_to='pics')
+    img= models.ImageField(upload_to='assets')
     explain= models.TextField(max_length=2000)
+
+
+    def __str__(self):
+        return self.title
+        
 
 class Contact(models.Model):
     name = models.CharField(max_length=100)

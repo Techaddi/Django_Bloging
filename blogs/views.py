@@ -30,3 +30,12 @@ def contact(request):
 def post(request):
     blog1 = Blog.objects.all()
     return render(request, 'post.html',{'blog1':blog1})
+
+def blogpost(request, title):
+    post=Blog.objects.filter(title=title).first()
+    context={'post':post
+              
+
+    }
+    return render(request, 'blogpost.html',context)
+    

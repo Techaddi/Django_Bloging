@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>About</title>
+        <title>Blogs</title>
         <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="{% static 'https://use.fontawesome.com/releases/v5.15.3/js/all.js' %}" crossorigin="anonymous"></script>
@@ -18,8 +19,8 @@
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-             <img class="logo-img" src="static/assets/ankitpic.jpg" width="80" height="80" ALT="align box" ALIGN=CENTER>
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav" style="background-color: darkgrey;opacity: 0.8;">
+            <img class="logo-img" src="static/assets/ankitpic.jpg" width="80" height="80" ALT="align box" ALIGN=CENTER>
 
             <div class="container px-4 px-lg-5">
                 <h4 class="navbar-brand"> Ankit Kumar..</h4>
@@ -27,7 +28,7 @@
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">'
+                <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index">Home</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about">About</a></li>
@@ -38,31 +39,34 @@
             </div>
         </nav>
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('static/assets/img/about-bg.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="page-heading">
+        
+        
+        <!-- Post Content-->
+       
+<div class="container">
+  <div class="well" style="margin-top: 220px;">
+      <div class="media">
+        <div style="width:100%">
+        <img class="media-object" style="width:150px" src="{{post.img.url}}">
+      </div>
+      <div class="media-body">
+        <h2 class="media-heading">{{post.title}}</h2>
+        <h4 class="media-heading">{{post.subtitle}}</h4>
 
-                            <h1>About Me</h1>
-                            {% for item in abouts %}
-                            <span class="subheading">{{item.head}}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- Main Content-->
-        <main class="mb-4">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <h3 class="subheading">{{item.about}}</h3>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </main>
+          
+          <p>{{post.explain}}</p>
+          <ul class="list-inline list-unstyled">
+        <li><span><i class="glyphicon glyphicon-calendar"></i> Date:{{post.date}} </span></li>
+            <li>________________</li>
+            <span><i class="glyphicon glyphicon-author"></i> Posted By:{{post.postedby}}</span>
+            <li>______________-</li>
+            
+      </ul>
+       </div>
+    </div>
+  </div>
+  
+</div>
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
